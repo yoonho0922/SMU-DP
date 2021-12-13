@@ -11,9 +11,20 @@ public class CalcV2 {
     State state;
     char operator; // 사칙 연산자 저장
 
+    State startState;
+    State firstOperandState;
+    State operatorState;
+    State secondOperandState;
+
     CalcV2() {
         scanner = new Scanner(System.in);  // Create a Scanner object
-        state = new StartState(this);
+
+        startState = new StartState(this);
+        firstOperandState = new FirstOperandState(this);
+        operatorState = new OperatorState(this);
+        secondOperandState = new SecondOperandState(this);
+
+        state = startState;
     }
 
     String getInput(String s) {

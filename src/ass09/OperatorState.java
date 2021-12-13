@@ -10,7 +10,7 @@ public class OperatorState implements State {
     @Override
     public void processNumber(String ch) {
         calc.setOperand2(Integer.parseInt(ch));
-        calc.setState(new SecondOperandState(calc));
+        calc.setState(calc.secondOperandState);
     }
 
     @Override

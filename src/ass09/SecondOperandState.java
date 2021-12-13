@@ -15,6 +15,6 @@ public class SecondOperandState implements State{
     @Override
     public void processOperator(char ch) {
         calc.printOutResult();
-        calc.setState(new StartState(calc));
+        calc.setState(calc.startState);
     }
 }

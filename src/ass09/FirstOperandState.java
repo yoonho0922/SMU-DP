@@ -16,6 +16,6 @@ public class FirstOperandState implements State{
     @Override
     public void processOperator(char ch) {
         calc.setOperator(ch);
-        calc.setState(new OperatorState(calc));
+        calc.setState(calc.operatorState);
     }
 }
